@@ -1,0 +1,20 @@
+//
+//  RaceAssembly.swift
+//  AstonGame
+//
+//  Created by Евгений Мизюк on 27.02.2024.
+//
+
+import Foundation
+import UIKit
+
+final class RaceAssembly {
+    
+    func assemble() -> UIViewController {
+        let storageManager = StorageManager()
+        let presenter = RacePresenter(storageManager: storageManager)
+        let viewController = RaceViewController(presenter: presenter)
+        viewController.modalPresentationStyle = .fullScreen
+        return viewController
+    }
+}
